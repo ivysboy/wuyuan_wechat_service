@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.happylifeplat.wechat.mapper.WechatUrlMapper">
+
+	<insert id="create" parameterType="com.happylifeplat.wechat.domain.WechatUrl">
+		insert into wechat_url(id, redirect_url) values(#{id}, #{redirectUrl})
+	</insert>
+
+	<select id="getIdByRedirectUrl" parameterType="java.lang.String" resultType="java.lang.String">
+		select id from wechat_url where redirect_url = #{value}
+	</select>
+	
+	<select id="getRedirectUrlById" parameterType="java.lang.String" resultType="java.lang.String">
+		select redirect_url from wechat_url where id = #{value}
+	</select>
+
+	<select id="getPhoneByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+		select u.phone from `user` u  where u.id = #{userId}
+		AND u.is_disable = 0
+		AND u.is_locked_out = 0
+	</select>
+
+	<select id="getUserIdByPhone" parameterType="java.lang.String" resultType="java.lang.String">
+		select u.id from `user` u  where u.phone = #{phone}
+		AND u.is_disable = 0
+		AND u.is_locked_out = 0
+	</select>
+
+
+
+</mapper>

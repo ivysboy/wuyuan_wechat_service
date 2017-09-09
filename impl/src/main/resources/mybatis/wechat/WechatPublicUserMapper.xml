@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.happylifeplat.wechat.mapper.WechatPublicUserMapper">
+
+	<insert id="create" parameterType="com.happylifeplat.wechat.model.result.WechatPublicUserDto">
+		insert into wechat_public_user(
+			id, user_id, app_id, open_id
+		) values (
+			#{id}, #{userId}, #{appId}, #{openId}
+		)
+	</insert>
+	
+	<select id="getUserIdByOpenIdAndAppId" parameterType="com.happylifeplat.wechat.model.result.WechatPublicUserDto" resultType="java.lang.String">
+		select user_id from wechat_public_user where open_id = #{openId} and app_id = #{appId}
+	</select>
+
+	<select id="getOpenIdByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+		select open_id from wechat_public_user where user_id = #{userId}
+	</select>
+
+</mapper>

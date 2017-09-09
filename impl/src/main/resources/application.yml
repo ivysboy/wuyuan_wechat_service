@@ -1,0 +1,36 @@
+server:
+  port: 9991
+  contextPath: /wechat-service
+  address: 127.0.0.1
+
+spring:
+  profiles:
+    active: uat
+# ACTIVEMQ
+  activemq:
+    broker-url: ${activemq.broker-url}
+    user: ${activemq.user}
+    password: ${activemq.password}
+    in-memory: true
+    pool:
+      enabled: false
+    packages:
+      trust-all: true
+#JMS
+  jms:
+    pub-sub-domain: true
+
+logging:
+  level:
+      root: error
+      org.springframework.web: error
+      org.apache.ibatis: error
+      com.happylifeplat: debug
+      com.ctrip.framework.apollo : info
+      org.springframework.jms: debug
+  path: "./logs"
+
+
+
+
+

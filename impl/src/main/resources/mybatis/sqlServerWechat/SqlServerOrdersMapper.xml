@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.happylifeplat.sqlServerWechat.mapper.SqlServerOrdersMapper">
+
+	<select id="getInfo" parameterType="com.happylifeplat.wechat.model.WechatPayDto" resultType="com.happylifeplat.wechat.model.result.OrdersDto">
+		select 
+			PayNumber as payNumber, SubTotal as totalPrice, CreateTime as createDate 
+		from 
+			Orders 
+		<where>
+			<if test="ordersId != null and ordersId != ''">
+				Id = #{ordersId} 
+			</if>
+			<if test="payNumber != null and payNumber != ''">
+				and PayNumber = #{payNumber}
+			</if>
+	    </where> 
+	</select>
+	
+	<select id="getGoodsNmaesByPayNumber" parameterType="java.lang.String" resultType="java.lang.String">
+		select 
+			g.Name
+		from 
+			Goods g
+		left join 
+			OrderItems oi 
+		on 
+			g.Id = oi.Item_Id
+		and 
+			oi.IsDisable = 0 
+		left join 
+			Orders o 
+		on 
+			oi.Order_Id = o.Id
+		and 
+			o.IsDisable = 0
+		where 
+			g.IsDisable = 0
+		and 
+			o.PayNumber = #{value}
+	</select>
+
+</mapper>

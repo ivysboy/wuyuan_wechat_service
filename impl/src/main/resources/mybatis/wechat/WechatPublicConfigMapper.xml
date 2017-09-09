@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.happylifeplat.wechat.mapper.WechatPublicConfigMapper">
+
+	<resultMap type="com.happylifeplat.wechat.domain.WechatPublicConfig" id="BaseResultMap">
+		<id column="app_id" property="appId" jdbcType="VARCHAR" />
+		<result column="app_secret" property="appSecret" jdbcType="VARCHAR" />
+		<result column="token" property="token" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		app_id, app_secret, token
+	</sql>
+	
+	<select id="getAppIdCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(1) from wechat_public_config where app_id = #{value}
+	</select>
+	
+	<select id="getAppSecretByAppId" parameterType="java.lang.String" resultType="java.lang.String">
+		select app_secret from wechat_public_config where app_id = #{value}
+	</select>
+	
+	<select id="getAppId" resultType="java.lang.String">
+		select app_id from wechat_public_config
+	</select>
+
+</mapper>
