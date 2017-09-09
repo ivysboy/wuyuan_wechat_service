@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wechat-service.iml" filepath="$PROJECT_DIR$/wechat-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/wechat-service-api.iml" filepath="$PROJECT_DIR$/api/wechat-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/impl/wechat-service-impl.iml" filepath="$PROJECT_DIR$/impl/wechat-service-impl.iml" />
+    </modules>
+  </component>
+</project>

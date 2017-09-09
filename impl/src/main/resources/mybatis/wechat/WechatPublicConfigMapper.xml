@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.happylifeplat.wechat.mapper.WechatPublicConfigMapper">
+<mapper namespace="com.wuyuan.wechat.mapper.WechatPublicConfigMapper">
 
-	<resultMap type="com.happylifeplat.wechat.domain.WechatPublicConfig" id="BaseResultMap">
+	<resultMap type="com.wuyuan.wechat.domain.WechatPublicConfig" id="BaseResultMap">
 		<id column="app_id" property="appId" jdbcType="VARCHAR" />
 		<result column="app_secret" property="appSecret" jdbcType="VARCHAR" />
 		<result column="token" property="token" jdbcType="VARCHAR" />

@@ -18,7 +18,7 @@
 	</context:component-scan> -->
 
      <!-- 引入dubbo配置 -->
-     <import resource="classpath:spring/wechat-consumer.xml"/>
+     <!--<import resource="classpath:spring/wechat-consumer.xml"/>-->
 
 	 <import resource="spring-dataSource.xml"/>
 </beans>

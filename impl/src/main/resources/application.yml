@@ -6,19 +6,19 @@ server:
 spring:
   profiles:
     active: uat
-# ACTIVEMQ
-  activemq:
-    broker-url: ${activemq.broker-url}
-    user: ${activemq.user}
-    password: ${activemq.password}
-    in-memory: true
-    pool:
-      enabled: false
-    packages:
-      trust-all: true
-#JMS
-  jms:
-    pub-sub-domain: true
+## ACTIVEMQ
+#  activemq:
+#    broker-url: ${activemq.broker-url}
+#    user: ${activemq.user}
+#    password: ${activemq.password}
+#    in-memory: true
+#    pool:
+#      enabled: false
+#    packages:
+#      trust-all: true
+##JMS
+#  jms:
+#    pub-sub-domain: true
 
 logging:
   level:

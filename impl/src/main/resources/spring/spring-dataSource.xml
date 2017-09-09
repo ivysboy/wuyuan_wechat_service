@@ -64,36 +64,13 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="wgjSqlSessionFactory"/>
         <property name="basePackage"
-                  value="com.happylifeplat.wechat.mapper"/>
-    </bean>
-
-    <!-- sqlserver数据源 -->
-    <bean id="sqlserverDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
-          destroy-method="close" primary="false">
-        <property name="driverClassName" value="${jdbc.sqlserver.driverClassName}"/>
-        <property name="url" value="${jdbc.sqlserver.url}"/>
-        <property name="username" value="${jdbc.sqlserver.username}"/>
-        <property name="password" value="${jdbc.sqlserver.password}"/>
-    </bean>
-
-    <bean id="sqlserverSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="sqlserverDataSource"/>
-        <!-- 引入mybatis配置文件 -->
-        <property name="configLocation" value="classpath:mybatis/sqlServerMybatis-config.xml"/>
-        <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath*:mybatis/sqlServerWechat/*.xml"/>
-    </bean>
-
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactoryBeanName" value="sqlserverSqlSessionFactory"/>
-        <property name="basePackage" value="com.happylifeplat.sqlServerWechat.mapper"/>
+                  value="com.wuyuan.wechat.mapper"/>
     </bean>
 
     <!-- (事务管理) -->
     <bean id="transactionManagerEx"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="sqlserverDataSource"/>
+        <property name="dataSource" ref="weChatDataSource"/>
     </bean>
     <tx:annotation-driven transaction-manager="transactionManagerEx"/>
 
