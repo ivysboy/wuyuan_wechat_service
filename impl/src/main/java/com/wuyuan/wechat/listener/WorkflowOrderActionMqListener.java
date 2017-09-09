@@ -1,12 +1,9 @@
 package com.wuyuan.wechat.listener;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.wuyuan.wechat.builder.TemplateMsgBuilder;
 import com.wuyuan.wechat.config.ApolloWeChatConfig;
 import com.wuyuan.wechat.service.impl.WxService;
-import me.chanjar.weixin.mp.api.impl.WxMpTemplateMsgServiceImpl;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 import org.slf4j.Logger;
@@ -14,9 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by xuwuyuan on 2017/9/7.
@@ -28,7 +22,7 @@ public class WorkflowOrderActionMqListener {
     private static Gson gson = new Gson();
 
     @Autowired
-    private WxService wxService;
+    private WxService wxMpService;
 
     @Autowired
     private TemplateMsgBuilder templateMsgBuilder;
@@ -43,27 +37,18 @@ public class WorkflowOrderActionMqListener {
         logger.info("----------- 支付回调begin -----------" + notice);
 //        String paynumber = jsn.getString("payNumber");
 
-        List<WxMpTemplateData> data = new ArrayList<>();
+        WxMpTemplateMessage templateMessage = new WxMpTemplateMessage();
+        templateMessage.setToUser("olHAy0zLKlDitDMLfXSUuT9rysAI");
+        templateMessage.setTemplateId(apolloWeChatConfig.getTemplateId());
+        templateMessage.setUrl("http://www.qq.com");
+        templateMessage.getData().add(new WxMpTemplateData("first", "标题", "#000000"));
+        templateMessage.getData().add(new WxMpTemplateData("keyword1", "状态", "#000000"));
 
-        WxMpTemplateData first = new WxMpTemplateData();
-        first.setName("first");
-        first.setValue("请查看新订单");
-        data.add(first);
-
-        WxMpTemplateData keyword1 = new WxMpTemplateData();
-        first.setName("keyword1");
-        first.setValue("支付成功");
-        data.add(keyword1);
-
-        WxMpTemplateMessage message = templateMsgBuilder.getTemplateMessage("olHAy0zLKlDitDMLfXSUuT9rysAI",
-                "http://www.qq.com", data);
         try {
-            WxMpTemplateMsgServiceImpl templateMsgService = new WxMpTemplateMsgServiceImpl(wxService);
-            templateMsgService.sendTemplateMsg(message);
+            wxMpService.getTemplateMsgService().sendTemplateMsg(templateMessage);
         } catch (Exception e) {
-            logger.error("==========send template msg error : " + e.getMessage());
+            e.printStackTrace();
         }
-
         logger.info("----------- 支付回调 end -----------");
     }
 }

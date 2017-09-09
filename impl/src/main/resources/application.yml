@@ -25,8 +25,8 @@ logging:
       root: error
       org.springframework.web: info
       org.apache.ibatis: error
-      com.wuyuan: debug
-      com.ctrip.framework.apollo : debug
+      com.wuyuan: info
+      com.ctrip.framework.apollo : info
       org.springframework.jms: debug
   path: "./logs"
 
