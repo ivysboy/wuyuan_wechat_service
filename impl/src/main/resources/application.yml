@@ -1,7 +1,7 @@
 server:
   port: 9991
   contextPath: /wechat-service
-  address: 127.0.0.1
+  address: 0.0.0.0
 
 spring:
   profiles:

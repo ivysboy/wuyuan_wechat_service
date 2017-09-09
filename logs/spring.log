@@ -16216,3 +16216,11 @@ fat.meta=http://104.199.254.250:8080
 2017-09-10 04:13:39.164  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : =================order action: dsfad
 2017-09-10 04:13:39.165  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : ----------- 支付回调begin -----------dsfad
 2017-09-10 04:13:39.940  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : ----------- 支付回调 end -----------
+2017-09-10 04:29:34.928 DEBUG 77015 --- [DefaultMessageListenerContainer-1] o.s.j.l.DefaultMessageListenerContainer  : Received message of type [class org.apache.activemq.command.ActiveMQTextMessage] from consumer [ActiveMQMessageConsumer { value=ID:xuwuyuandeMacBook-Pro.local-59122-1504987947454-1:1:1:1, started=true }] of session [ActiveMQSession {id=ID:xuwuyuandeMacBook-Pro.local-59122-1504987947454-1:1:1,started=true} java.lang.Object@5e15716f]
+2017-09-10 04:29:34.929 DEBUG 77015 --- [DefaultMessageListenerContainer-1] .s.j.l.a.MessagingMessageListenerAdapter : Processing [GenericMessage [payload=dfss, headers={jms_redelivered=false, jms_deliveryMode=1, jms_destination=topic://com.wuyuan.payment.complete.v2, jms_correlationId=, jms_priority=0, jms_type=, id=cd43a5b4-fb50-3375-190c-393c7e48d4de, jms_timestamp=1504988974854, jms_expiration=0, jms_messageId=ID:wuyuan-dev-util-server-42461-1504986505406-4:1:1:1:3, timestamp=1504988974929}]]
+2017-09-10 04:29:34.929  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : =================order action: dfss
+2017-09-10 04:29:34.929  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : ----------- 支付回调begin -----------dfss
+2017-09-10 04:29:35.390  INFO 77015 --- [DefaultMessageListenerContainer-1] c.w.w.l.WorkflowOrderActionMqListener    : ----------- 支付回调 end -----------
+2017-09-10 04:33:44.094 DEBUG 77015 --- [Thread-10] o.s.j.l.DefaultMessageListenerContainer  : Shutting down JMS listener container
+2017-09-10 04:33:44.097 DEBUG 77015 --- [Thread-10] o.s.j.l.DefaultMessageListenerContainer  : Waiting for shutdown of message listener invokers
+2017-09-10 04:33:44.097 DEBUG 77015 --- [DefaultMessageListenerContainer-1] o.s.j.l.DefaultMessageListenerContainer  : Lowered scheduled invoker count: 0
