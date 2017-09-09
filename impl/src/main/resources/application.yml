@@ -6,27 +6,27 @@ server:
 spring:
   profiles:
     active: uat
-## ACTIVEMQ
-#  activemq:
-#    broker-url: ${activemq.broker-url}
-#    user: ${activemq.user}
-#    password: ${activemq.password}
-#    in-memory: true
-#    pool:
-#      enabled: false
-#    packages:
-#      trust-all: true
-##JMS
-#  jms:
-#    pub-sub-domain: true
+# ACTIVEMQ
+  activemq:
+    broker-url: ${activemq.broker-url}
+    user: ${activemq.user}
+    password: ${activemq.password}
+    in-memory: true
+    pool:
+      enabled: false
+    packages:
+      trust-all: true
+#JMS
+  jms:
+    pub-sub-domain: true
 
 logging:
   level:
       root: error
-      org.springframework.web: error
+      org.springframework.web: info
       org.apache.ibatis: error
-      com.happylifeplat: debug
-      com.ctrip.framework.apollo : info
+      com.wuyuan: debug
+      com.ctrip.framework.apollo : debug
       org.springframework.jms: debug
   path: "./logs"
 

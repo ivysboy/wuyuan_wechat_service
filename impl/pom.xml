@@ -17,12 +17,6 @@
             <artifactId>wechat-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        
-        <dependency>
-             <groupId>com.happylifeplat</groupId>
-             <artifactId>pay-service-api</artifactId>
-             <version>1.0.1-SNAPSHOT</version>
-        </dependency>
 
         <dependency>
             <groupId>com.happylifeplat</groupId>
@@ -34,12 +28,6 @@
             <groupId>com.happylifeplat</groupId>
             <artifactId>commons</artifactId>
             <version>1.0.1-RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.happylifeplat.base-service</groupId>
-            <artifactId>base-service-api</artifactId>
-            <version>1.4.8-RELEASE</version>
         </dependency>
         
         <!-- dubbo  -->

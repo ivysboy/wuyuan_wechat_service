@@ -36,12 +36,12 @@ public class WorkflowOrderActionMqListener {
     @Autowired
     private ApolloWeChatConfig apolloWeChatConfig;
 
-    @JmsListener(destination = "com.happylifeplat.payment.complete.v2")
+    @JmsListener(destination = "com.wuyuan.payment.complete.v2")
     public void receiveQueue(String notice) {
         logger.info("=================order action: " + notice);
-        JSONObject jsn = JSON.parseObject(notice);
+//        JSONObject jsn = JSON.parseObject(notice);
         logger.info("----------- 支付回调begin -----------" + notice);
-        String paynumber = jsn.getString("payNumber");
+//        String paynumber = jsn.getString("payNumber");
 
         List<WxMpTemplateData> data = new ArrayList<>();
 

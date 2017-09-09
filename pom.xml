@@ -88,21 +88,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.happylifeplat</groupId>
-            <artifactId>activemq-define</artifactId>
-            <version>1.5.0.RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.happylifeplat</groupId>
-                    <artifactId>coupon-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.springfox</groupId>
-                    <artifactId>springfox-swagger-common</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-broker</artifactId>
         </dependency>
